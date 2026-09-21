@@ -1,0 +1,17 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "devCommand": "npm run dev:full",
+  "framework": "custom",
+  "regions": ["iad1"],
+  "env": {
+    "NODE_ENV": "production",
+    "CLIENT_URL": "https://hhjj-black.vercel.app"
+  },
+  "functions": {
+    "server/index.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
+}

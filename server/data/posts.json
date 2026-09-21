@@ -1,0 +1,44 @@
+[
+  {
+    "id": "0691e9cb-6277-4a04-b7ab-098e6e89a5cb",
+    "title": "Why Clean Code Matters More Than You Think",
+    "excerpt": "Exploring how writing clean, maintainable code saves time and reduces bugs in the long run.",
+    "content": "Clean code is not about being clever — it is about being kind to the next person who reads your work, who is very often yourself six months later.\n\nWhen code is readable, bugs become easier to spot, reviews go faster, and new features slot in without fear. Teams that invest in naming, small functions, and consistent structure ship more predictably than teams that chase shortcuts.\n\nStart small: pick one file this week and leave it cleaner than you found it. That habit compounds faster than any framework upgrade.",
+    "tags": [
+      "Clean Code",
+      "Best Practices"
+    ],
+    "icon": "fas fa-book",
+    "gradient": "linear-gradient(135deg, #3b82f6, #1d4ed8)",
+    "status": "published",
+    "date": "2024-12-15"
+  },
+  {
+    "id": "85ce1d54-f24f-436d-ae44-5e9a0f95e1cb",
+    "title": "Getting Started with React Server Components",
+    "excerpt": "A beginner-friendly guide to understanding and implementing React Server Components in your next project.",
+    "content": "React Server Components let you render parts of your UI on the server, sending less JavaScript to the browser while keeping the interactivity you expect.\n\nThe mental model is simple: server components fetch data and render static output, while client components handle state and events. You can mix both in the same tree.\n\nTry converting one data-heavy page in your app first. Measure the bundle size before and after — the difference is usually what convinces the whole team.",
+    "tags": [
+      "React",
+      "Tutorial"
+    ],
+    "icon": "fab fa-react",
+    "gradient": "linear-gradient(135deg, #6366f1, #4f46e5)",
+    "status": "published",
+    "date": "2024-11-28"
+  },
+  {
+    "id": "2051e9be-72ea-4739-91f5-0aaccf1bcf55",
+    "title": "Top 5 API Design Patterns for 2024",
+    "excerpt": "Discover the most effective API design patterns that make your backend robust and developer-friendly.",
+    "content": "Good API design is a user interface for developers. Consistent naming, predictable status codes, and clear errors matter more than clever architecture.\n\nMy top patterns: versioned routes, pagination on every list endpoint, idempotency keys for writes, meaningful error payloads, and rate-limit headers clients can actually read.\n\nPick one API you maintain and audit it against this list. Small, boring consistency is what developers remember and recommend.",
+    "tags": [
+      "API",
+      "Backend"
+    ],
+    "icon": "fas fa-code",
+    "gradient": "linear-gradient(135deg, #10b981, #059669)",
+    "status": "published",
+    "date": "2024-11-10"
+  }
+]
