@@ -4,9 +4,6 @@
   "devCommand": "npm run dev:full",
   "framework": "vite",
   "regions": ["iad1"],
-  "env": {
-    "NODE_ENV": "production"
-  },
   "functions": {
     "server/index.js": {
       "memory": 1024,
