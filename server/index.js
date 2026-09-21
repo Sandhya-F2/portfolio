@@ -750,8 +750,12 @@ if (fs.existsSync(distPath)) {
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`🚀 Portfolio server running on http://localhost:${PORT}`);
-  console.log(`📁 Admin protected by server-side JWT authentication`);
-  console.log(`🔒 HTTP-only cookies with bcrypt password hashing`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Portfolio server running on http://localhost:${PORT}`);
+    console.log(`📁 Admin protected by server-side JWT authentication`);
+    console.log(`🔒 HTTP-only cookies with bcrypt password hashing`);
+  });
+}
+
+export default app;
