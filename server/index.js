@@ -37,19 +37,11 @@ if (!JWT_SECRET) {
   );
 }
 
-let ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || "NirMani22@1";
+let ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH;
 if (!ADMIN_PASSWORD_HASH && process.env.ADMIN_PASSWORD) {
   ADMIN_PASSWORD_HASH = bcrypt.hashSync(process.env.ADMIN_PASSWORD, 10);
   console.warn(
     "WARNING: derived ADMIN_PASSWORD_HASH from plaintext ADMIN_PASSWORD env. Prefer setting ADMIN_PASSWORD_HASH directly.",
-  );
-}
-
-if (!ADMIN_PASSWORD_HASH) {
-  const devPassword = "NirMani22@1";
-  ADMIN_PASSWORD_HASH = bcrypt.hashSync(devPassword, 10);
-  console.warn(
-    "WARNING: ADMIN_PASSWORD_HASH not set — using fallback password 'NirMani22@1'. Set ADMIN_PASSWORD_HASH in server/.env or Vercel dashboard.",
   );
 }
 
