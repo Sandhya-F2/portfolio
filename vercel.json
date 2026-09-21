@@ -2,11 +2,11 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "devCommand": "npm run dev:full",
-  "framework": "custom",
+  "framework": "vite",
   "regions": ["iad1"],
   "env": {
     "NODE_ENV": "production",
-    "CLIENT_URL": "https://hhjj-black.vercel.app"
+    "CLIENT_URL": "https://portfolio-black.vercel.app"
   },
   "functions": {
     "server/index.js": {
