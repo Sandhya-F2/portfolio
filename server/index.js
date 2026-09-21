@@ -37,7 +37,7 @@ if (!JWT_SECRET) {
   );
 }
 
-let ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || "";
+let ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || "NirMani22@1";
 if (!ADMIN_PASSWORD_HASH && process.env.ADMIN_PASSWORD) {
   ADMIN_PASSWORD_HASH = bcrypt.hashSync(process.env.ADMIN_PASSWORD, 10);
   console.warn(
@@ -46,10 +46,10 @@ if (!ADMIN_PASSWORD_HASH && process.env.ADMIN_PASSWORD) {
 }
 
 if (!ADMIN_PASSWORD_HASH) {
-  const devPassword = "admin123";
+  const devPassword = "NirMani22@1";
   ADMIN_PASSWORD_HASH = bcrypt.hashSync(devPassword, 10);
   console.warn(
-    "WARNING: ADMIN_PASSWORD_HASH not set — using fallback password 'admin123'. Set ADMIN_PASSWORD_HASH in server/.env or Vercel dashboard.",
+    "WARNING: ADMIN_PASSWORD_HASH not set — using fallback password 'NirMani22@1'. Set ADMIN_PASSWORD_HASH in server/.env or Vercel dashboard.",
   );
 }
 
@@ -74,7 +74,7 @@ app.use(
       callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
-  })
+  }),
 );
 app.use(cookieParser());
 app.use(express.json({ limit: "100kb" }));
@@ -664,7 +664,9 @@ app.post("/api/posts", authenticateToken, (req, res) => {
       title: title.trim(),
       excerpt: excerpt.trim(),
       content: content.trim(),
-      tags: Array.isArray(tags) ? tags.map((t) => t.trim()).filter(Boolean) : [],
+      tags: Array.isArray(tags)
+        ? tags.map((t) => t.trim()).filter(Boolean)
+        : [],
       icon: icon || "fas fa-book",
       gradient: gradient || "linear-gradient(135deg, #3b82f6, #1d4ed8)",
       status: status || "published",
@@ -689,8 +691,7 @@ app.put("/api/posts/:id", authenticateToken, (req, res) => {
     }
     const posts = readPosts();
     const index = posts.findIndex((p) => p.id === req.params.id);
-    if (index === -1)
-      return res.status(404).json({ error: "Post not found." });
+    if (index === -1) return res.status(404).json({ error: "Post not found." });
 
     const { title, excerpt, content, tags, icon, gradient, status, date } =
       req.body;

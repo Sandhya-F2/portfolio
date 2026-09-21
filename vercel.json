@@ -1,13 +1,18 @@
 {
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "devCommand": "npm run dev:full",
   "framework": "vite",
   "regions": ["iad1"],
   "functions": {
-    "server/index.js": {
+    "api/index.js": {
       "memory": 1024,
       "maxDuration": 10
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    }
+  ]
 }
