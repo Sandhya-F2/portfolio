@@ -16,7 +16,7 @@ const Hero = lazy(() => import("./components/Hero"));
 const About = lazy(() => import("./components/About"));
 const Projects = lazy(() => import("./components/Projects"));
 const Skills = lazy(() => import("./components/Skills"));
-const Contact = lazy(() => import("./components/Contact"));
+
 const Blog = lazy(() => import("./components/Blog"));
 const Resume = lazy(() => import("./components/Resume"));
 const AdminLogin = lazy(() => import("./components/admin/AdminLogin"));
@@ -39,7 +39,6 @@ function AppContent() {
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/skills" element={<Skills />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/admin" element={<AdminRoute />} />

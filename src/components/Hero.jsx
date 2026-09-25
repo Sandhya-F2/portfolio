@@ -12,8 +12,7 @@ export default function Hero() {
             <h3 style={{ color: 'var(--accent)', marginBottom: '1.5rem', fontWeight: 500 }}>Software Developer</h3>
             <p>I love creating innovative web applications and digital experiences. My focus is on developing reliable, high-performance solutions while maintaining clean architecture and exceptional user experience.</p>
             <div className="hero-buttons">
-              <Link to="/projects" className="btn btn-primary">View My Work <i className="fas fa-arrow-right" aria-hidden="true"></i></Link>
-              <Link to="/contact" className="btn btn-outline">Contact Me <i className="fas fa-paper-plane" aria-hidden="true"></i></Link>
+<Link to="/projects" className="btn btn-primary">View My Work <i className="fas fa-arrow-right" aria-hidden="true"></i></Link>
             </div>
           </div>
           <div className="hero-image">

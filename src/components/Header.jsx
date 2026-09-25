@@ -9,7 +9,6 @@ const navLinks = [
   { to: '/projects', label: 'Projects' },
   { to: '/skills', label: 'Skills' },
   { to: '/blog', label: 'Blog' },
-  { to: '/contact', label: 'Contact' },
   { to: '/resume', label: 'Resume' },
 ]
 
