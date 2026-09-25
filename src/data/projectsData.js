@@ -1,7 +1,7 @@
 // Default project data for the portfolio
 const defaultProjects = [
   {
-    id: "2",
+    id: "1",
     name: "My_Portfolio",
     description:
       "A personal portfolio website showcasing projects, skills, and professional experience. Built with React and modern design principles.",
@@ -14,7 +14,7 @@ const defaultProjects = [
     date: "2024-06-20",
   },
   {
-    id: "3",
+    id: "2",
     name: "E-Commerce Dashboard",
     description:
       "A comprehensive analytics dashboard for e-commerce platforms with real-time data visualization and reporting.",
@@ -28,17 +28,53 @@ const defaultProjects = [
   },
 ];
 
+function sanitizeProject(project, index) {
+  return {
+    id: project?.id ?? `${index + 1}`,
+    name:
+      typeof project?.name === "string" ? project.name : `Project ${index + 1}`,
+    description:
+      typeof project?.description === "string" ? project.description : "",
+    tech: Array.isArray(project?.tech) ? project.tech : [],
+    github: typeof project?.github === "string" ? project.github : "#",
+    demo: typeof project?.demo === "string" ? project.demo : "#",
+    icon: typeof project?.icon === "string" ? project.icon : "fas fa-code",
+    gradient:
+      typeof project?.gradient === "string"
+        ? project.gradient
+        : "linear-gradient(135deg, #0ea5e9, #6366f1)",
+    status: typeof project?.status === "string" ? project.status : "completed",
+    date:
+      typeof project?.date === "string"
+        ? project.date
+        : new Date().toISOString(),
+  };
+}
+
+export function normalizeProjects(value) {
+  if (!Array.isArray(value)) return defaultProjects;
+
+  return value
+    .filter((project) => project && typeof project === "object")
+    .map((project, index) => sanitizeProject(project, index));
+}
+
 export function loadProjects() {
   try {
     const stored = localStorage.getItem("portfolio-projects");
-    if (stored) return JSON.parse(stored);
-  } catch {}
-  return defaultProjects;
+    if (!stored) return defaultProjects;
+
+    const parsed = JSON.parse(stored);
+    return normalizeProjects(parsed);
+  } catch {
+    return defaultProjects;
+  }
 }
 
 export function saveProjects(projects) {
   try {
-    localStorage.setItem("portfolio-projects", JSON.stringify(projects));
+    const normalized = normalizeProjects(projects);
+    localStorage.setItem("portfolio-projects", JSON.stringify(normalized));
   } catch {
     // Storage quota exceeded or unavailable (private mode) — non-fatal.
   }
