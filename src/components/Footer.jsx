@@ -28,7 +28,7 @@ export default function Footer() {
               <i className="fab fa-linkedin-in" aria-hidden="true"></i>
             </a>
             <a
-              href="mailto:sandhyatimilsena@gmail.com"
+              href="mailto:sandhyatimilsena42@gmail.com"
               aria-label="Send Email"
             >
               <i className="fas fa-envelope" aria-hidden="true"></i>
