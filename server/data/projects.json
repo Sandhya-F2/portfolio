@@ -1,22 +1,10 @@
 [
   {
-    "id": "dev-1",
-    "name": "Weather-Backend",
-    "description": "A robust backend service for weather data retrieval and forecasting.",
-    "tech": ["Node.js", "Express", "REST API", "Cloud"],
-    "github": "https://github.com/symon-br/Weather-Backend",
-    "demo": "#",
-    "icon": "fas fa-cloud-sun",
-    "gradient": "linear-gradient(135deg, #0ea5e9, #6366f1)",
-    "status": "completed",
-    "date": "2024-01-15"
-  },
-  {
     "id": "dev-2",
     "name": "My_Portfolio",
     "description": "A personal portfolio website built with React, Vite, and modern design.",
     "tech": ["React", "CSS3", "Framer Motion", "Vite"],
-    "github": "https://github.com/symon-br/My_Portfolio",
+    "github": "https://github.com/Sandhya-F2/portfolio",
     "demo": "#",
     "icon": "fas fa-briefcase",
     "gradient": "linear-gradient(135deg, #8b5cf6, #ec4899)",
